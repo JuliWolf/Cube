@@ -1,27 +1,31 @@
 import { map } from 'underscore'
-import { Link } from "react-router-dom"
+import { NavLink as RRNavLink } from 'react-router-dom';
 import React, { Component } from 'react'
+import { Col, Row, Nav, NavItem, NavLink } from 'reactstrap';
 
 const SECTIONS = [
+    { title: 'Home', href: '/' },
     { title: 'Countries', href: '/countries' }
 ];
 
-class Router extends Component {
+class Header extends Component {
     render() {
         return (
-            <div className='Home'>
-                <div className='Home-Body'>
-                    <div className='SectionNavigation'>
+            <Row>
+                <Col sm="12">
+                    <Nav>
                         {map(SECTIONS, ({ title, href }) => (
-                            <Link className='SectionNavigation-Item Section' to={href} key={href}>
-                                <span className='Section-Title'>{title}</span>
-                            </Link>
+                            <NavItem key={href.toString()}>
+                                <NavLink className='SectionNavigation-Item Section' to={href} tag={RRNavLink}>
+                                    <span className='Section-Title'>{title}</span>
+                                </NavLink>
+                            </NavItem>
                         ))}
-                    </div>
-                </div>
-            </div>
+                    </Nav>
+                </Col>
+            </Row>
         )
     }
 }
 
-export default Router;
+export default Header;
