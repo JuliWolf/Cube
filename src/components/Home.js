@@ -62,7 +62,7 @@ export default class Home extends Component {
                                 render={resultSet => (
                                     <ResponsiveContainer width="100%" height={300}>
                                         <LineChart data={resultSet.chartPivot()}>
-                                            <XAxis dataKey="date" tickFormatter={dateFormatter} />
+                                            <XAxis dataKey="category" tickFormatter={dateFormatter} />
                                             <YAxis tickFormatter={numberFormatter} />
                                             <Tooltip labelFormatter={dateFormatter} />
                                             <Line type="monotone" dataKey="History.totalAmount" name="History" stroke="rgb(106, 110, 229)" label={<CustomizedLabel />}/>

@@ -5,7 +5,7 @@ import { Col, Row, Nav, NavItem, NavLink } from 'reactstrap';
 
 const SECTIONS = [
     { title: 'Home', href: '/' },
-    { title: 'Countries', href: '/countries' }
+    // { title: 'Countries', href: '/countries' }
 ];
 
 class Header extends Component {
